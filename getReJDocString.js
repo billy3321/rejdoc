@@ -3,7 +3,7 @@
  * Copyright (c) 2017-Present lisez <mm4324@gmail.com>
  * All rights reserved. This code is governed by a BSD-style license
  * that can be found in the LICENSE file.
- * version: 1.4
+ * version: 1.5-dev
  ***********************************************/
 'use strict';
 
@@ -34,12 +34,12 @@ function getReJDocString(input) {
 		regexTopColumns	= /^【|^裁判[字號日期案由全內文]+|^會議次別|^決議日期|^資料來源|^相關法條|^決議：|^討論事項：|提案：$|^歷審裁判|^解釋[字號日期爭點文理由]+/,
 		regexBodyColumns= /^[主文理由犯罪事實及附表件註錄條文要旨：]{2,}$/,
 		regexLawArticle = /第[\d、\-]+條\([\d\.]+\)$/,
-		regexCaseName	= /^[司法最高臺灣北中高雄福建智慧公務員]{2,}.+[壹貳叁參肆伍陸柒捌玖拾一二三四五六七八九十\u25CB\d]+年度.+字第[壹貳叁參肆伍陸柒捌玖拾一二三四五六七八九十\u25CB\d]+號[裁判定決]*$/,
+		regexCaseName	= /^([司法最高臺灣北中高雄福建智慧公務員]{2,}.+)*[壹貳叁參肆伍陸柒捌玖拾一二三四五六七八九十\u25CB\d]+年度.+字第[壹貳叁參肆伍陸柒捌玖拾一二三四五六七八九十\u25CB\d]+號[裁判定決]*$|^[司法最高臺灣北中高雄福建智慧公務員]{2,}.+[刑民事行政簡易]{2,}[裁判定決]{2}$/,
 		regexParities	= /^[先後]?訴?[原被]告|^[法定訴訟]*[代理表]+人|^移送機關|^被付懲戒人|^訴願人|^聲請覆審人|^聲請人|^相對人|^再?抗告人|^被?上訴人|^債[務權]人|^[原審選任]*辯護人|^公訴人|律師$/,
-		regexOfficials  = /^.+庭.+[法官審判長]+|^大?法官|^書記官/,
+		regexOfficials  = /^.+庭.+[法官審判長]+|^大?法官|^(法院)*書記官/,
 		// Paragraph Tier
 		regexTier1		= /^[甲乙丙丁戊己庚辛壬癸子丑寅卯辰巳午未申酉戌亥]+[、說：]+/,
-		regexTier2		= /^[壹貳叁參肆伍陸柒捌玖拾一二三四五六七八九十\u25CB\uFF10-\uFF19]+[、說：]+/,
+		regexTier2		= /^[壹貳叁參肆伍陸柒捌玖拾一二三四五六七八九十\uFF10-\uFF19]+[、說：]+/,
 		regexTier3		= /^[(（][一二三四五六七八九十\u25CB\uFF10-\uFF19]+[）)]/,
 		regexTier4		= /^[\d\uFF10-\uFF19]+\.\D/,
 		regexTier5		= /^[(（][\d\uFF10-\uFF19]+[)）]\D/,
