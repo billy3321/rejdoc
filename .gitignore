@@ -1,4 +1,5 @@
 [Tt]emp
+[Tt]est
 *.user
 *.suo
 *.[Cc]ache
@@ -17,4 +18,3 @@
 *.zip
 
 master
-chrome-extension/manifest.json
