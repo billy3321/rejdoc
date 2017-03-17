@@ -1,0 +1,27 @@
+{
+  "name": "rejdoc",
+  "version": "2.0.0",
+  "description": "Relayout the doc via ROC Judicial Doc System.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lisez/rejdoc.git"
+  },
+  "keywords": [
+    "javascript",
+    "regex",
+    "rejdoc"
+  ],
+  "author": "lisez",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/lisez/rejdoc/issues"
+  },
+  "homepage": "https://github.com/lisez/rejdoc#readme"
+}

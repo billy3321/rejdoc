@@ -1,14 +1,10 @@
-'use strict';
-
 /* *********************************************
  * @license
  * Copyright (c) 2017-Present lisez <mm4324@gmail.com>
  * All rights reserved. This code is governed by a BSD-style license
  * that can be found in the LICENSE file.
- * version: 2.0-alpha
+ * version: 2.0.0-alpha
  ***********************************************/
-
-/* exported getReJDocString */
 
 /***************************************
  * Re-layout ROC Judicial doc to easy reuse style.
@@ -266,7 +262,7 @@ function getReJDocString(input) {
 
     }
 
-    console.log(this.caseContent);
+    // console.log(this.caseContent);
     return true;
 }
 
@@ -285,3 +281,5 @@ getReJDocString.prototype.getText = function() {
 getReJDocString.prototype.getJSON = function() {
     return JSON.stringify(this.caseContent);
 };
+
+module.exports = getReJDocString;
