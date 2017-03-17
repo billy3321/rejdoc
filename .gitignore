@@ -8,7 +8,7 @@
 *.DS_Store
 [Tt]est[Rr]esult*
 [Tt]humbs.db 
- 
+
 *.7z
 *.gz
 *.iso

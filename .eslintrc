@@ -15,20 +15,75 @@
         "amd": true
     },
     "rules": {
-        "indent": ["warn", 4, { "SwitchCase": 1 }],
-        "linebreak-style": ["warn", "unix"],
-        "semi": ["error", "always"],
-        "comma-dangle": ["error", "never"],
-        "no-cond-assign": ["error", "always"],
-        "no-irregular-whitespace": ["warn", { "skipRegExps": true , "skipComments": true}],
-        "no-extra-parens": ["warn", "all"],
-        "no-unsafe-negation": ["error"],
-        "strict": ["warn", "global"],
-        "no-floating-decimal": ["error"],
-        "no-multiple-empty-lines": ["warn"],
-        "no-trailing-spaces": ["warn", { "skipBlankLines": true }],
-        "no-console": ["warn", {"allow": [ "warn", "error" ]}],
-        "no-unused-vars": ["warn", { "vars": "local" , "args": "after-used"}]
+        "indent": [
+            "warn",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "linebreak-style": [
+            "warn",
+            "unix"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "comma-dangle": [
+            "error",
+            "never"
+        ],
+        "no-cond-assign": [
+            "error",
+            "always"
+        ],
+        "no-irregular-whitespace": [
+            "warn",
+            {
+                "skipRegExps": true,
+                "skipComments": true
+            }
+        ],
+        "no-extra-parens": [
+            "warn",
+            "all"
+        ],
+        "no-unsafe-negation": [
+            "error"
+        ],
+        "strict": [
+            "warn",
+            "global"
+        ],
+        "no-floating-decimal": [
+            "error"
+        ],
+        "no-multiple-empty-lines": [
+            "warn"
+        ],
+        "no-trailing-spaces": [
+            "warn",
+            {
+                "skipBlankLines": true
+            }
+        ],
+        "no-console": [
+            "warn",
+            {
+                "allow": [
+                    "warn",
+                    "error"
+                ]
+            }
+        ],
+        "no-unused-vars": [
+            "warn",
+            {
+                "vars": "local",
+                "args": "after-used"
+            }
+        ]
     },
     "globals": {
         "chrome": true
