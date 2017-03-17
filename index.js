@@ -3,7 +3,7 @@
  * Copyright (c) 2017-Present lisez <mm4324@gmail.com>
  * All rights reserved. This code is governed by a BSD-style license
  * that can be found in the LICENSE file.
- * version: 2.0.0-alpha
+ * version: 2.0.1-alpha
  ***********************************************/
 
 /***************************************
@@ -43,6 +43,7 @@ function getReJDocString(input) {
         regexOfficials   = /^([審判長]*法官|[法院]*書記官)(.+)$/,
 
         // Marks
+        regexNumber     = /\d+/,
         regexBlankMarks = /\s+|　/g,
         regexFootMarks  = /[。：！？]\n/gim,
         regexAllMarks   = /[，。、！？「」（）()『』]+/,
@@ -214,7 +215,7 @@ function getReJDocString(input) {
         }
 
         // if the paragraph have marks
-        if (regexAllMarks.test(_term)) {
+        if (regexAllMarks.test(_term) || regexNumber.test(_term)) {
 
             // ex. ＯＯＯ第00條(yyy/mm/dd) || ＯＯＯ第271條（殺人罪）
             if (regexLawArticle.test(_term)) {
@@ -241,22 +242,25 @@ function getReJDocString(input) {
                 continue;
             }
 
-            // ＯＯ第ＯＯ庭審判長法官ＯＯＯ
-            if (regexOfficeChief.test(_term)) {
-                var _temp = _term.match(regexOfficeChief);
-                this.caseContent['court_div'] = _temp[1];
-                this.caseContent['court_member'].push(_temp[2]);
-                this.caseContent['fulltext'].push(_term);
-                continue;
-            } else {
-                if (regexOffice.test(_term)) {
-                    this.caseContent['court_div'] = _term;
+            // exclude: 法官或檢察官執行本法而有法官法第30條第2項或第89條            
+            if (!regexNumber.test(_term)) {
+                // ＯＯ第ＯＯ庭審判長法官ＯＯＯ
+                if (regexOfficeChief.test(_term)) {
+                    var _temp = _term.match(regexOfficeChief);
+                    this.caseContent['court_div'] = _temp[1];
+                    this.caseContent['court_member'].push(_temp[2]);
+                    this.caseContent['fulltext'].push(_term);
+                    continue;
+                } else {
+                    if (regexOffice.test(_term)) {
+                        this.caseContent['court_div'] = _term;
+                    }
+                    if (regexOfficials.test(_term)) {
+                        this.caseContent['court_member'].push(_term);
+                    }
+                    this.caseContent['fulltext'].push(_term);
+                    continue;
                 }
-                if (regexOfficials.test(_term)) {
-                    this.caseContent['court_member'].push(_term);
-                }
-                this.caseContent['fulltext'].push(_term);
-                continue;
             }
         }
 

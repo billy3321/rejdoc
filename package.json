@@ -1,6 +1,6 @@
 {
   "name": "rejdoc",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Relayout the doc via ROC Judicial Doc System.",
   "main": "index.js",
   "directories": {
